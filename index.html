@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>vue-select-input</title>
+
+    <script src="framework/vue-min-2.5.16.js"></script>
+    <script src="component/vue-select-input.js"></script>
+    <script src="index.js"></script>
+
+    <link href="framework/bootstrap.min-4.3.1.css" rel="stylesheet"/>
+</head>
+<body>
+
+<div class="container" id="appFormVueSelectInput">
+    <button @click="readOnly = !readOnly">change mode</button>
+    <p>mode : {{ readOnly ? 'view' : 'edit' }}</p>
+
+    <br>
+
+    <vue-select-input :items="items"
+                      label="select your preference"
+                      :readonly="readOnly"
+                      class-name="col-xs-3"
+                      v-model="itemSelected"></vue-select-input>
+
+    <br>
+    <p>your selection : {{ itemSelected }}</p>
+
+</div>
+
+</body>
+</html>
